@@ -1,17 +1,13 @@
     """
-    this SHOULD get the angles from the current limb positions and print it to the ROS command line
+    this prints the angles (first from the left arm, then the right one)
 
     """
 import argparse
 import sys
-import math
 import rospy
 
 from baxter_interface import (
     DigitalIO,
-    Gripper,
-    Navigator,
-    CHECK_VERSION,
 )
 
 
@@ -21,5 +17,7 @@ Langles = Llimb.joint_angles()
 Rlimb = baxter_interface.Limb('right')
 Rangles = Rlimb.joint_angles()
 
+print "showing left angles"
 print Langles
+print "showing right angles"
 print Rangles
